@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "hoomanh7798",
+    "password": 4311219377,
+    "database": "secretdb",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "omitNull": true,
+    "sync": { "force": true }
+  },
+  "test": {
+    "username": "hoomanh7798",
+    "password": 4311219377,
+    "database": "secretdb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

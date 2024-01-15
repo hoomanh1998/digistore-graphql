@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@responsive {
+  .image-slider-width {
+    width: calc(100vw - 1rem);
+  }
+  .open-sidebar-width {
+    width: calc(100% - 16rem);
+  }
+  .close-sidebar-width {
+    width: calc(100% - 4.5rem);
+  }
+}
+
+@layer utilities {
+  @variants dark {
+    .spinner-loader-dark {
+      border: 3px solid rgba(0, 0, 0, 0.3);
+      border-top: 3px solid #1f2937;
+      border-radius: 50%;
+      margin: 0;
+    }
+    .spinner-loader {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid #f3f4f6;
+      border-radius: 50%;
+      margin: 0;
+    }
+  }
+  .triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 32px solid red;
+    border-left: 32px solid transparent;
+  }
+  .price-overflow {
+    max-width: 112px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .navbar-shadow {
+    box-shadow: -2px -7px 34px -15px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -2px -7px 34px -15px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -2px -7px 34px -15px rgba(0, 0, 0, 0.3);
+  }
+  .line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var();
+    -webkit-box-orient: vertical;
+  }
+  .text-inter-word {
+    text-justify: inter-word;
+  }
+  .active-link {
+    color: #1d4ed8;
+    font-weight: bold;
+  }
+  .slider-icon-top {
+    top: calc(50% - 1.5rem);
+  }
+  .hide-scrollbars::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbars {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .transition-placeholder-opacity::placeholder {
+    transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+  }
+  .show-input-placeholder::placeholder {
+    opacity: 1;
+  }
+  .hide-input-placeholder::placeholder {
+    opacity: 0;
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply min-h-screen;
+    -webkit-tap-highlight-color: transparent;
+  }
+  * {
+    @apply box-border;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-2xl md:rounded-xl cursor-pointer tracking-wide focus:outline-none;
+  }
+  .btn-gray {
+    @apply bg-gray-400 dark:bg-gray-500 text-white font-semibold md:dark:hover:bg-gray-600 md:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 transition duration-150 ease-in-out;
+  }
+  .btn-blue {
+    @apply bg-blue-500 text-white font-semibold md:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-150 ease-in-out;
+  }
+  .btn-green {
+    @apply bg-green-500 text-white font-semibold md:hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-150 ease-in-out;
+  }
+  .btn-red {
+    @apply bg-red-400 text-white font-semibold md:hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 transition duration-150 ease-in-out;
+  }
+  .input {
+    @apply appearance-none w-full border dark:border-transparent border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-200 py-3 px-4;
+  }
+  .input-error,
+  .select-error {
+    @apply border-2 border-red-400 dark:border-red-500 focus:ring-1 focus:ring-red-400 dark:focus:ring-red-400;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 200;
+    src: url("./fonts/Nunito-ExtraLight.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 300;
+    src: url("./fonts/Nunito-Light.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 400;
+    src: url("./fonts/Nunito-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 600;
+    src: url("./fonts/Nunito-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 700;
+    src: url("./fonts/Nunito-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 800;
+    src: url("./fonts/Nunito-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-weight: 900;
+    src: url("./fonts/Nunito-Black.ttf");
+  }
+}
